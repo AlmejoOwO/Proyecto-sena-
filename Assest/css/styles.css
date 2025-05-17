@@ -596,6 +596,14 @@ h6 {
     z-index: 0;
 }
 
+.Producctos{
+    margin-left: 10%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
 
-
-
+.card{
+    justify-content: end;
+    display: flex;
+}

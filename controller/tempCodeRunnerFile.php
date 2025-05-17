@@ -1,23 +1,16 @@
 <?php
-//informaciond e la base de datos
-$servidor ="localhost" ; 
-$usuario ="root" ; 
-$clave ="123456789" ; 
-$basededatos ="quibit" ; 
+$servername = "localhost"; // Servidor (por defecto: localhost)
+$username = "root";        // Usuario (por defecto en Laragon: root)
+$password = "";            // Contraseña (por defecto en Laragon: vacío)
+$dbname = "quibit";        // Nombre de la base de datos
 
-// variable para crear la coneccion 
-$conexion = mysqli_connect($servidor ,$usuario, $clave,$basededatos,$enlase);
+// Crear la conexión
+$conn = mysqli_connect($servername, $username, $password, $dbname);
 
-//verificar conexion 
-If($conexion ->connect_error ){
-     die("conecicon fallida :". $conexion ->connect_error);
- 
-} else {
-    echo"conexion completada BD:PHP";
+// Verificar la conexión
+if (!$conn) {
+    die("Conexión fallida: " . mysqli_connect_error());
 }
-  
-$con = mysqli_connect("","*the_name*","*the_pass*","*the_database*");
-if (mysqli_connect_errno()) {
-    echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
+
+echo "Conexión exitosa";
 ?>

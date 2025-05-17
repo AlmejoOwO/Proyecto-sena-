@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href=/Assest/css/productos.css>
+<link rel="stylesheet"href="http://localhost/Assest/css/styles.css"> 
+<link rel="stylesheet" href=/Assest/css/styles.css>
+<body>
+    
+<!--header-->
+    <header class="header">
+        <div class="logo">
+            <img href="Main.html" src="/Assest/img/Logo.png"  class="logo">
+        </div>
+      
+        <div>
+            <nav class="filtrar">
+                <form class="busqueda">
+                  <input class="buscar" type="buscar" placeholder="Search" aria-label="Search">
+                  <button class="lupa" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                  </svg></button>
+                </form>
+              </nav>
+        </div>
+          </div>
+            <nav>
+               <ul class="nav-links">
+                      <li> <a href="Main.html" class="a">inicio</a></li>
+                      <li> <a href="sing.html" class="a">Sign</a></li>
+                      <li> <a href="login.html" class="a">login</a></li>
+                      <li> <a href="carrito.html" class="svg"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  viewBox="0 0 16 16">
+                          <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                        </svg></a></li>
+               </ul>            
+            </nav>
+        <a onclick="openNav()" class="menu" href="#"><button><img src="../img/menu.png" alt=""></button></a>
+            <div id="mobile-menu" class="overlay">
+              <a onclick="closeNav()" href="" class="close">&times;</a>
+              <div class="overlay-content">
+                <li> <a href="Main.html" class="a">inicio</a></li>
+                <li> <a href="sing.html" class="a">Sign</a></li>
+                <li> <a href="login.html" class="a">login</a></li>
+                <li> <a href="carrito.html" class="svg"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  viewBox="0 0 16 16">
+                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                  </svg></a></li>
+              </div>
+         </div>
+      
+           </div>  
+      </header>
+      <main>
+        <section id="productos">
+          <h2>Lista de Productos</h2>
+          <ul id="producto-lista"></ul>
+        </section>
+
+      </main>
+      <div class="container">
+        <h2>Agregar Producto</h2>
+        <form id="productForm">
+          <label for="nombre">Nombre del Producto:</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Ej: Zanahoria" required>
+    
+          <label for="precio">Precio:</label>
+          <input type="number" id="precio" name="precio" placeholder="Ej: 3000" required>
+    
+          <label for="descripcion">Descripción:</label>
+          <textarea id="descripcion" name="descripcion" placeholder="Ej: Zanahoria fresca orgánica" rows="4" required></textarea>
+    
+          <label for="categoria">ID de Categoría:</label>
+          <select id="categoria" name="categoria" required>
+            <option value="11">Frutas y Verduras</option>
+            <option value="12">Lácteos</option>
+            <option value="13">Granos</option>
+            <option value="11">Frutas y Verduras</option>
+
+
+      </select>
+
+      <button type="submit">Enviar Producto</button>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('productForm');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const data = {
+        nombre: formData.get('nombre'),
+        precio: parseFloat(formData.get('precio')),
+        descripcion: formData.get('descripcion'),
+        id_categoria: parseInt(formData.get('categoria'))
+      };
+
+      try {
+        const response = await fetch('http://localhost:3000/producto', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        });
+
+        if (response.ok) {
+          alert('Producto agregado correctamente');
+          form.reset();
+        } else {
+          alert('Error al agregar el producto');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('No se pudo conectar con el servidor');
+      }
+    });
+    
+  </script>
+      </div>
+  
+      <script src="/Assest/Scripts/.api_producto.js"></script>
+      <script src="/Assest/Scripts/funcionalidades/script.js"></script>
+</body>
+</html>

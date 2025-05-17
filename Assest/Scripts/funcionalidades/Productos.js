@@ -1,4 +1,4 @@
-// src/models/producto.js
+
 const Sequelize = require('Sequelize');
 
 const productoSchema = new mongoose.Schema({

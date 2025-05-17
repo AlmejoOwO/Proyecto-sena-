@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" type="image/ico" href="images/icon_page.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href=/Assest/css/crudstyle.css>
+    <link rel="stylesheet" href=/Assest/css/styles.css>
+    <meta name="description" content="CRUD dinamico con HTMLS, CSS and JS">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:600&display=swap" rel="stylesheet">
+    <title>Crud JS</title>
+</head>
+<body>
+    <header class="header" id="header">
+        <figure class="logo">
+          <img src="/Assest/img/Logo.png" height="60" alt="Logo de la pagina" />
+        </figure>
+          <nav class="menu">
+            <ol>
+              <li>
+
+            </ol>
+          </nav>
+      </header>
+    <br/>
+            <form onsubmit="event.preventDefault();onSubmit();" autocomplete="off">
+              <div class="tablita">
+                <table class="tabla" id="tabla">
+                  <thead>
+                    <tr> 
+                      <th>Nombre</th> 
+                      <th>Apellido</th>
+                      <th>Password</th>
+                      <th>Opciones</th>
+                    </tr>
+                  </thead>
+                    <tbody>
+      
+                    </tbody>
+                </table>
+              </div>
+              <br/>
+              <br/>
+              <div class="caja">
+                <label for="nom">Nombre</label> <input type="text" id="nom" placeholder="Escriba aqui" required>
+                <label for="ape">Apellido</label> <input type="text" id="ape" placeholder="Escriba aqui" required>
+                <label for="pais">Password</label> <input type="text" id="pais" placeholder="Escriba aqui" required>
+                
+                
+              </div>
+              <br/>
+              <input class="submit" type="submit" value="Escribir">
+              </form>
+        <br/>
+        <br/>
+        </div>
+
+</body>
+<script type="text/javascript" src="/Assest/Scripts/funcionalidades/crud.js"></script>
